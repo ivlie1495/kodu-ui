@@ -1,4 +1,13 @@
 import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 
 const colors = [
   {
@@ -54,8 +63,8 @@ const typography = [
 ]
 
 const surfaces = [
-  { label: 'Background', cls: 'bg-background border border-border' },
-  { label: 'Card', cls: 'bg-card border border-border' },
+  { label: 'Background', cls: 'bg-background' },
+  { label: 'Card', cls: 'bg-card' },
   { label: 'Muted', cls: 'bg-muted' },
   { label: 'Accent', cls: 'bg-accent' },
 ]
@@ -116,16 +125,26 @@ export default function ThemePage() {
         {/* Typography */}
         <section className="space-y-4">
           <h2 className="text-xl font-semibold">Typography</h2>
-          <div className="divide-border divide-y rounded-lg border">
-            {typography.map((t) => (
-              <div key={t.name} className="flex items-center gap-6 px-5 py-4">
-                <span className="text-muted-foreground w-24 shrink-0 text-xs">
-                  {t.name}
-                </span>
-                <span className={t.cls}>{t.sample}</span>
-              </div>
-            ))}
-          </div>
+          <Table>
+            <TableHeader>
+              <TableRow>
+                <TableHead>Style</TableHead>
+                <TableHead>Sample</TableHead>
+              </TableRow>
+            </TableHeader>
+            <TableBody>
+              {typography.map((t) => (
+                <TableRow key={t.name}>
+                  <TableCell className="text-muted-foreground w-28 text-xs">
+                    {t.name}
+                  </TableCell>
+                  <TableCell>
+                    <span className={t.cls}>{t.sample}</span>
+                  </TableCell>
+                </TableRow>
+              ))}
+            </TableBody>
+          </Table>
         </section>
 
         {/* Surfaces */}
@@ -133,11 +152,13 @@ export default function ThemePage() {
           <h2 className="text-xl font-semibold">Surfaces</h2>
           <div className="grid grid-cols-2 gap-4 sm:grid-cols-4">
             {surfaces.map((s) => (
-              <div key={s.label} className={`rounded-lg p-4 ${s.cls}`}>
-                <p className="text-muted-foreground text-xs font-medium">
-                  {s.label}
-                </p>
-              </div>
+              <Card key={s.label} className={s.cls}>
+                <CardContent className="pt-4">
+                  <p className="text-muted-foreground text-xs font-medium">
+                    {s.label}
+                  </p>
+                </CardContent>
+              </Card>
             ))}
           </div>
         </section>

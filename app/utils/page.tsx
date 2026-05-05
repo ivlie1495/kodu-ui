@@ -1,6 +1,16 @@
 import Image from 'next/image'
 
+import { Badge } from '@/components/ui/badge'
 import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/components/ui/table'
 import { UtilsSidebar } from '@/components/utils/utils-sidebar'
 
 const params = [
@@ -98,36 +108,36 @@ export default function UtilsPage() {
         <div className="grid gap-6 md:grid-cols-3">
           <div className="bg-card col-span-2 overflow-hidden rounded-xl border p-6">
             <h3 className="mb-6 text-lg font-semibold">Parameters</h3>
-            <table className="w-full text-left text-sm">
-              <thead>
-                <tr className="text-muted-foreground border-b text-xs font-semibold uppercase">
-                  <th className="pb-3">Prop</th>
-                  <th className="pb-3">Type</th>
-                  <th className="pb-3">Default</th>
-                  <th className="pb-3">Description</th>
-                </tr>
-              </thead>
-              <tbody>
+            <Table>
+              <TableHeader>
+                <TableRow>
+                  <TableHead>Prop</TableHead>
+                  <TableHead>Type</TableHead>
+                  <TableHead>Default</TableHead>
+                  <TableHead>Description</TableHead>
+                </TableRow>
+              </TableHeader>
+              <TableBody>
                 {params.map((p) => (
-                  <tr key={p.prop} className="border-b last:border-0">
-                    <td className="text-primary py-3 font-mono font-semibold">
+                  <TableRow key={p.prop}>
+                    <TableCell className="text-primary font-mono font-semibold">
                       {p.prop}
-                    </td>
-                    <td className="py-3">
+                    </TableCell>
+                    <TableCell>
                       <span className="bg-muted rounded px-2 py-0.5 font-mono text-xs">
                         {p.type}
                       </span>
-                    </td>
-                    <td className="text-muted-foreground py-3 font-mono">
+                    </TableCell>
+                    <TableCell className="text-muted-foreground font-mono">
                       {p.default}
-                    </td>
-                    <td className="text-muted-foreground py-3">
+                    </TableCell>
+                    <TableCell className="text-muted-foreground">
                       {p.description}
-                    </td>
-                  </tr>
+                    </TableCell>
+                  </TableRow>
                 ))}
-              </tbody>
-            </table>
+              </TableBody>
+            </Table>
           </div>
 
           <div className="bg-primary text-primary-foreground flex flex-col justify-between rounded-xl p-6">

@@ -1,5 +1,7 @@
 import Image from 'next/image'
 
+import { Badge } from '@/components/ui/badge'
+
 const checklist = [
   'Type-safe properties for every component',
   'Atomic design principles out of the box',
@@ -21,9 +23,7 @@ export function ProductHighlight() {
           />
         </div>
         <div className="space-y-6 lg:w-1/2">
-          <span className="bg-primary/10 text-primary rounded-full px-3 py-1 text-xs font-medium">
-            THE BRAIN
-          </span>
+          <Badge variant="secondary">THE BRAIN</Badge>
           <h2 className="text-3xl font-semibold">Logic-First Architecture</h2>
           <p className="text-muted-foreground">
             Our library isn&apos;t just about pixels. With built-in state

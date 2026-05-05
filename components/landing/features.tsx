@@ -1,3 +1,5 @@
+import { Card, CardContent } from '@/components/ui/card'
+
 const items = [
   {
     title: 'Enhanced Components',
@@ -29,12 +31,14 @@ export function Features() {
         </div>
         <div className="grid gap-6 md:grid-cols-3">
           {items.map((f) => (
-            <div key={f.title} className="bg-card rounded-xl border p-6">
-              <h3 className="font-semibold">{f.title}</h3>
-              <p className="text-muted-foreground mt-2 text-sm">
-                {f.description}
-              </p>
-            </div>
+            <Card key={f.title}>
+              <CardContent>
+                <h3 className="font-semibold">{f.title}</h3>
+                <p className="text-muted-foreground mt-2 text-sm">
+                  {f.description}
+                </p>
+              </CardContent>
+            </Card>
           ))}
         </div>
       </div>

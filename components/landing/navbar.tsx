@@ -1,6 +1,7 @@
 import Link from 'next/link'
 
 import { Button } from '@/components/ui/button'
+import { Input } from '@/components/ui/input'
 
 export function Navbar() {
   return (
@@ -19,7 +20,10 @@ export function Navbar() {
           ))}
         </nav>
       </div>
-      <Button>Get Started</Button>
+      <div className="flex items-center gap-3">
+        <Input placeholder="Search..." className="hidden w-48 sm:block" />
+        <Button>Get Started</Button>
+      </div>
     </header>
   )
 }
