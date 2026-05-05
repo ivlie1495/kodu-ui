@@ -1,2 +1,3 @@
 @AGENTS.md
 @docs/PROJECT_OVERVIEW.md
+@docs/DEVELOPMENT.md
