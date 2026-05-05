@@ -14,7 +14,9 @@ app/
 components/
   ui/                 # shadcn/ui primitives. Built on @base-ui/react + cva + cn().
   landing/            # One file per landing page section (hero, navbar, cta, etc.)
-  library/            # /components page components (ComponentCard, Sidebar…). Add blocks/, utils/, etc. as pages grow.
+  library/            # /components page components (ComponentCard, Sidebar…).
+  blocks/             # /blocks page components (BlockCard, BlocksSidebar).
+  utils/              # /utils page components (UtilsSidebar).
 
 lib/
   ui.ts               # Exports cn() — always use this for conditional class merging.
@@ -61,13 +63,13 @@ docs/                 # Project documentation
 
 ## What's Built
 
-| Route         | Status   | Notes                                 |
-| ------------- | -------- | ------------------------------------- |
-| `/`           | Done     | Full landing page with 5 sections     |
-| `/components` | Done     | Base Components grid with sidebar     |
-| `/theme`      | Done     | Colors, buttons, typography, surfaces |
-| `/blocks`     | Scaffold | Empty page                            |
-| `/utils`      | Scaffold | Empty page                            |
+| Route         | Status | Notes                                   |
+| ------------- | ------ | --------------------------------------- |
+| `/`           | Done   | Full landing page with 5 sections       |
+| `/components` | Done   | Base Components grid with sidebar       |
+| `/theme`      | Done   | Colors, buttons, typography, surfaces   |
+| `/blocks`     | Done   | Block grid with sidebar and Tabs filter |
+| `/utils`      | Done   | useDebounce detail view with sidebar    |
 
 ## Adding a New UI Component
 

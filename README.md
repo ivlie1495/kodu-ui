@@ -41,9 +41,11 @@ app/
   utils/page.tsx          # TypeScript utilities
 
 components/
-  ui/                     # shadcn/ui primitives (Button, etc.)
+  ui/                     # shadcn/ui primitives (Button, Card, Badge, Table, Tabs…)
   landing/                # Landing page sections (Hero, Features, CTA…)
-  sections/               # Shared page-level components (ComponentCard, Sidebar…)
+  library/                # /components page (ComponentCard, Sidebar…)
+  blocks/                 # /blocks page (BlockCard, BlocksSidebar)
+  utils/                  # /utils page (UtilsSidebar)
 
 lib/
   ui.ts                   # cn() utility (clsx + tailwind-merge)
@@ -60,7 +62,7 @@ Tokens are defined as CSS custom properties in `app/globals.css` using `oklch` c
 | `--primary`   | `#1976D2` (Material Blue 700)   | Blue 300   |
 | `--secondary` | `#9C27B0` (Material Purple 600) | Purple 200 |
 
-Typography uses **Inter** for UI and **Space Grotesk** for code/labels.
+Typography uses **Inter** for UI text, **Geist Mono** for code, and **Space Grotesk** for labels/badges.
 
 ---
 
