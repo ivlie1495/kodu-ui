@@ -1,36 +1,77 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Kodu UI
+
+> The Body and the Brain for your next web project.
+
+A developer resource hub providing enhanced UI components, structural blocks, and TypeScript utilities — all copy-paste ready, no sign-up required.
+
+---
+
+## Stack
+
+| Layer      | Technology                     |
+| ---------- | ------------------------------ |
+| Framework  | Next.js (App Router)           |
+| Styling    | Tailwind CSS v4                |
+| Components | shadcn/ui (Base UI primitives) |
+| Language   | TypeScript                     |
+| Database   | Supabase + Prisma _(planned)_  |
+
+---
 
 ## Getting Started
 
-First, run the development server:
-
 ```bash
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+---
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## Project Structure
 
-## Learn More
+```
+app/
+  layout.tsx              # Root layout — Navbar + Footer live here
+  page.tsx                # Landing page
+  components/page.tsx     # Component library browser
+  theme/page.tsx          # Design system tokens (colors, typography)
+  blocks/page.tsx         # Structural blocks
+  utils/page.tsx          # TypeScript utilities
 
-To learn more about Next.js, take a look at the following resources:
+components/
+  ui/                     # shadcn/ui primitives (Button, etc.)
+  landing/                # Landing page sections (Hero, Features, CTA…)
+  sections/               # Shared page-level components (ComponentCard, Sidebar…)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+lib/
+  ui.ts                   # cn() utility (clsx + tailwind-merge)
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## Design System
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Tokens are defined as CSS custom properties in `app/globals.css` using `oklch` color space.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+| Token         | Light                           | Dark       |
+| ------------- | ------------------------------- | ---------- |
+| `--primary`   | `#1976D2` (Material Blue 700)   | Blue 300   |
+| `--secondary` | `#9C27B0` (Material Purple 600) | Purple 200 |
+
+Typography uses **Inter** for UI and **Space Grotesk** for code/labels.
+
+---
+
+## Adding a Component
+
+1. Create `components/ui/your-component.tsx` using Base UI primitives from `@base-ui/react`
+2. Use `cva` for variants and `cn()` for class merging
+3. Add a preview card in `app/components/page.tsx`
+
+---
+
+## Contributing
+
+PRs welcome. Keep components copy-paste friendly — no required wrappers or context providers.
