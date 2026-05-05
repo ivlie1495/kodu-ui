@@ -1,5 +1,13 @@
+import type { Metadata } from 'next'
+
 import { ComponentCard } from '@/components/library/component-card'
 import { ComponentsSidebar } from '@/components/library/components-sidebar'
+
+export const metadata: Metadata = {
+  title: 'Components',
+  description:
+    "A collection of fundamental UI building blocks designed with Material 3 principles, optimized for Kodu UI's professional design aesthetic.",
+}
 
 const components = [
   {

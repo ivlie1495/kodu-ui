@@ -1,6 +1,14 @@
+import type { Metadata } from 'next'
+
 import { BlockCard } from '@/components/blocks/block-card'
 import { BlocksSidebar } from '@/components/blocks/blocks-sidebar'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
+
+export const metadata: Metadata = {
+  title: 'Blocks',
+  description:
+    'Production-ready layout sections for rapid assembly — heroes, headers, pricing tables, dashboards, and more.',
+}
 
 const blocks = [
   {

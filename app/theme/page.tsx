@@ -1,3 +1,5 @@
+import type { Metadata } from 'next'
+
 import { Button } from '@/components/ui/button'
 import { Card, CardContent } from '@/components/ui/card'
 import {
@@ -8,6 +10,12 @@ import {
   TableHeader,
   TableRow,
 } from '@/components/ui/table'
+
+export const metadata: Metadata = {
+  title: 'Theme',
+  description:
+    'Design system tokens — colors, typography, buttons, and surface styles for Kodu UI.',
+}
 
 const colors = [
   {

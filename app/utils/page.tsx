@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 
 import { Badge } from '@/components/ui/badge'
@@ -12,6 +13,12 @@ import {
   TableRow,
 } from '@/components/ui/table'
 import { UtilsSidebar } from '@/components/utils/utils-sidebar'
+
+export const metadata: Metadata = {
+  title: 'Utils',
+  description:
+    'Copy-pasteable TypeScript hooks and helper functions — useDebounce, useLocalStorage, formatCurrency, and more.',
+}
 
 const params = [
   {
