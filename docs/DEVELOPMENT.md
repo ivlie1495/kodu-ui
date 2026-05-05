@@ -14,7 +14,7 @@ app/
 components/
   ui/                 # shadcn/ui primitives. Built on @base-ui/react + cva + cn().
   landing/            # One file per landing page section (hero, navbar, cta, etc.)
-  sections/           # Reusable page-level components shared across routes.
+  library/            # /components page components (ComponentCard, Sidebar…). Add blocks/, utils/, etc. as pages grow.
 
 lib/
   ui.ts               # Exports cn() — always use this for conditional class merging.
@@ -34,7 +34,7 @@ docs/                 # Project documentation
 ### Pages
 
 - Pages only compose section components — no inline JSX sections longer than ~10 lines.
-- Landing sections go in `components/landing/`, page-specific shared pieces go in `components/sections/`.
+- Landing sections go in `components/landing/`, other pages get their own folder (e.g. `components/library/`, `components/blocks/`).
 
 ### Styling
 
@@ -78,6 +78,6 @@ docs/                 # Project documentation
 
 ## Adding a New Page Section
 
-1. Create `components/landing/<section-name>.tsx` or `components/sections/<section-name>.tsx`
+1. Create `components/landing/<section-name>.tsx` or `components/<page-name>/<section-name>.tsx`
 2. Keep data arrays co-located in the same file
 3. Import and compose in the relevant `app/.../page.tsx`

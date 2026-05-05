@@ -1,5 +1,5 @@
-import { ComponentCard } from '@/components/sections/component-card'
-import { ComponentsSidebar } from '@/components/sections/components-sidebar'
+import { ComponentCard } from '@/components/library/component-card'
+import { ComponentsSidebar } from '@/components/library/components-sidebar'
 
 const components = [
   {
