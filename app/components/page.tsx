@@ -1,5 +1,3 @@
-import { Footer } from '@/components/landing/footer'
-import { Navbar } from '@/components/landing/navbar'
 import { ComponentCard } from '@/components/sections/component-card'
 import { ComponentsSidebar } from '@/components/sections/components-sidebar'
 
@@ -100,30 +98,26 @@ const components = [
 
 export default function ComponentsPage() {
   return (
-    <div className="bg-background text-foreground">
-      <Navbar />
-      <div className="mx-auto flex max-w-7xl gap-10 px-6 py-12">
-        <ComponentsSidebar active="Colors" />
-        <main className="flex-1">
-          <nav className="text-muted-foreground mb-4 flex items-center gap-2 text-sm">
-            <span>Components</span>
-            <span>›</span>
-            <span className="text-foreground">Base Components</span>
-          </nav>
-          <h1 className="text-4xl font-bold">Base Components</h1>
-          <p className="text-muted-foreground mt-3 max-w-2xl">
-            A collection of fundamental UI building blocks designed with
-            Material 3 principles, optimized for Kodu UI&apos;s professional
-            design aesthetic.
-          </p>
-          <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
-            {components.map((c) => (
-              <ComponentCard key={c.title} {...c} />
-            ))}
-          </div>
-        </main>
-      </div>
-      <Footer />
+    <div className="mx-auto flex max-w-7xl gap-10 px-6 py-12">
+      <ComponentsSidebar active="Colors" />
+      <main className="flex-1">
+        <nav className="text-muted-foreground mb-4 flex items-center gap-2 text-sm">
+          <span>Components</span>
+          <span>›</span>
+          <span className="text-foreground">Base Components</span>
+        </nav>
+        <h1 className="text-4xl font-bold">Base Components</h1>
+        <p className="text-muted-foreground mt-3 max-w-2xl">
+          A collection of fundamental UI building blocks designed with Material
+          3 principles, optimized for Kodu UI&apos;s professional design
+          aesthetic.
+        </p>
+        <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+          {components.map((c) => (
+            <ComponentCard key={c.title} {...c} />
+          ))}
+        </div>
+      </main>
     </div>
   )
 }

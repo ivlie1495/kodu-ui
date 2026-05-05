@@ -1,6 +1,8 @@
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono, Nunito_Sans } from 'next/font/google'
 
+import { Footer } from '@/components/landing/footer'
+import { Navbar } from '@/components/landing/navbar'
 import { cn } from '@/lib/ui'
 
 import './globals.css'
@@ -39,7 +41,11 @@ export default function RootLayout({
         nunitoSans.variable,
       )}
     >
-      <body className="flex min-h-full flex-col">{children}</body>
+      <body className="flex min-h-full flex-col">
+        <Navbar />
+        {children}
+        <Footer />
+      </body>
     </html>
   )
 }
