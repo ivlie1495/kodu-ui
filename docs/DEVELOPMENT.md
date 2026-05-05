@@ -37,6 +37,7 @@ docs/                 # Project documentation
 
 - Pages only compose section components — no inline JSX sections longer than ~10 lines.
 - Landing sections go in `components/landing/`, other pages get their own folder (e.g. `components/library/`, `components/blocks/`).
+- Metadata: `app/layout.tsx` holds site-wide defaults (`title.default`, `title.template`, `keywords`, `openGraph`). Each page exports only its own `title` and `description` — never repeat layout-level fields.
 
 ### Styling
 
