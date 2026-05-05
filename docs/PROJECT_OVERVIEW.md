@@ -36,7 +36,7 @@
 ## 5. Monetization & Support
 
 - **Public Library:** Core components and essential utilities are free for everyone.
-- **Pro Blocks:** Complex, production-ready layouts available for professional needs.
+- **Blocks:** Complex, production-ready layouts for rapid assembly.
 - **Community Driven:** Supported by users through donations via **Trakteer** or **Buy Me a Coffee**.
 
 ---

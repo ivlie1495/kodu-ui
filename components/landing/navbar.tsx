@@ -8,7 +8,7 @@ export function Navbar() {
       <div className="flex items-center gap-8">
         <span className="text-primary text-xl font-bold">Kodu UI</span>
         <nav className="hidden gap-6 md:flex">
-          {['Components', 'Utils', 'Pro'].map((item) => (
+          {['Components', 'Utils', 'Blocks'].map((item) => (
             <Link
               key={item}
               href={`/${item.toLowerCase()}`}
